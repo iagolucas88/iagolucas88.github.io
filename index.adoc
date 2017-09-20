@@ -8,32 +8,34 @@
 :doctype: book
 :source-highlighter: pygments
 :caution-caption: Cuidado
-:important-caption: Importante
-:note-caption: Nota
-:tip-caption: Dica
-:warning-caption: Aviso
+:important-caption: Important
+:note-caption: Note
+:tip-caption: Tip
+:warning-caption: Warning
 :appendix-caption: Apêndice
-:example-caption: Exemplo
-:figure-caption: Figura
-:listing-caption: Listagem
+:example-caption: Exemple
+:figure-caption: Figure
+:listing-caption: Code
 :table-caption: Tabela
-:toc-title: Sumário
-:preface-title: Prefácio
-:version-label: Versão
-:last-update-label: Última atualização
+:toc-title: Content
+:preface-title: Preface
+:version-label: Version
+:last-update-label: Last Update
 
 
 = DCA0445: Processamento Digital de Imagens =
 
-
+== Preface ==
 
 == Introduction ==
 
 This page refers to a tutorial of some OpenCV functions and its effects on images.
 
-Link github (link:d)
+Link github (link:https://github.com/iagolucas88/iagolucas88.git)
 
 == First Unit ==
+Firsts steps on OpenCV library. On this unit, we will describe some examples of OpenCV functions on space domain.
+
 === Negative ===
 ==== Objective ====
 This program will take an image, and the user will determine a region passing coordenates. This region will be the negative of the original image.
@@ -46,6 +48,7 @@ This program will take an image, and the user will determine a region passing co
 include::regions.cpp[]
 ----
 
+==== Description ====
 The code (link:regions.cpp[]) read an image, so a user determine coordenates for _P1_ and _P2_. This region becames the negative by subtrating in each analized pixel (_image.at<uchar>(i,j) = 255 - image.at<uchar>(i, j);_).
 
 ==== Results ====
@@ -75,6 +78,7 @@ quadrant.
 include::trocaregioes.cpp[]
 ----
 
+==== Description ====
 The code (link:trocaregioes.cpp[]) read an image and find the center point by dividing the number of rows and colums by two. The point is used to separete the four quadrants. 
 The image is copied and used as an auxiliary, so the swap can be done. 
 
@@ -100,6 +104,7 @@ This program will count the number os objects contained in an image, remove thos
 include::labeling.cpp[]
 ----
 
+==== Description ====
 The code (link:labeling.cpp[]) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
 So each time the pixel is finded, add to a conter (_nobjects_) a new object. 
 To avoid misscounting, the function _cv::floodFill();_ is apllied on that object.
@@ -115,21 +120,22 @@ image::bolhas.png[Original Image, title="Original Image"]
 [[fig_labeling, Labeling]]
 //[.text-center]
 .Output Image
-image::labeling.png[Output Image, title="Filled Image"]
+image::labeling.png[Output Image, title="Filled Image"] | image::labeling.png[Output Image, title="Filled Image"]
 
 === Equalizer ===
 ==== Objective ====
-This program will count the number os objects contained in an image, remove those that touch the borders and count the numbers of holls in the objects.
+This program will read and image and equilize the histogram to redistributing each pixel color. This will highlight the colors, so the details will be more explicity.
 
 ==== Code ====
-[[exa_labeling, Objects Counter]]
+[[exa_equalize, Equilizer]]
 [source,cpp]
-.labeling.cpp
+.equalize.cpp
 ----
-include::labeling.cpp[]
+include::equalize.cpp[]
 ----
 
-The code (link:labeling.cpp[]) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
+==== Description ====
+The code (link:equalize.cpp[]) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
 So each time the pixel is finded, add to a conter (_nobjects_) a new object. 
 To avoid misscounting, the function _cv::floodFill();_ is apllied on that object.
 This function change the color of the pixels that has the same value and are next of the analized pixel for a determinated color (100).

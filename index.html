@@ -436,48 +436,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Iago Lucas &lt;iagolucas88@gmail.com&gt; Emerson Matheus &lt;emdantasc@bct.ect.ufrn.br&gt;</span><br>
 </div>
 <div id="toc" class="toc2">
-<div id="toctitle">Sumário</div>
+<div id="toctitle">Content</div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_first_unit">2. First Unit</a>
+<li><a href="#_preface">1. Preface</a></li>
+<li><a href="#_introduction">2. Introduction</a></li>
+<li><a href="#_first_unit">3. First Unit</a>
 <ul class="sectlevel2">
-<li><a href="#_negative">2.1. Negative</a></li>
-<li><a href="#_exchange_regions">2.2. Exchange Regions</a></li>
-<li><a href="#_objects_counter">2.3. Objects Counter</a></li>
-<li><a href="#_equalizer">2.4. Equalizer</a></li>
+<li><a href="#_negative">3.1. Negative</a></li>
+<li><a href="#_exchange_regions">3.2. Exchange Regions</a></li>
+<li><a href="#_objects_counter">3.3. Objects Counter</a></li>
+<li><a href="#_equalizer">3.4. Equalizer</a></li>
 </ul>
 </li>
-<li><a href="#_bibliografia">3. Bibliografia</a></li>
+<li><a href="#_bibliografia">4. Bibliografia</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
+<h2 id="_preface">1. Preface</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">2. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This page refers to a tutorial of some OpenCV functions and its effects on images.</p>
 </div>
 <div class="paragraph">
-<p>Link github (link:d)</p>
+<p>Link github (link:https://github.com/iagolucas88/iagolucas88.git)</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_first_unit">2. First Unit</h2>
+<h2 id="_first_unit">3. First Unit</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Firsts steps on OpenCV library. On this unit, we will describe some examples of OpenCV functions on space domain.</p>
+</div>
 <div class="sect2">
-<h3 id="_negative">2.1. Negative</h3>
+<h3 id="_negative">3.1. Negative</h3>
 <div class="sect3">
-<h4 id="_objective">2.1.1. Objective</h4>
+<h4 id="_objective">3.1.1. Objective</h4>
 <div class="paragraph">
 <p>This program will take an image, and the user will determine a region passing coordenates. This region will be the negative of the original image.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_code">2.1.2. Code</h4>
+<h4 id="_code">3.1.2. Code</h4>
 <div id="exa_regions" class="listingblock">
-<div class="title">Listagem 1. regions.cpp</div>
+<div class="title">Code 1. regions.cpp</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="cpp">#include &lt;iostream&gt;
 #include &lt;opencv2/opencv.hpp&gt;
@@ -561,30 +571,33 @@ int main(int, char**){
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_description">3.1.3. Description</h4>
 <div class="paragraph">
 <p>The code (<a href="regions.cpp" class="bare">regions.cpp</a>) read an image, so a user determine coordenates for <em>P1</em> and <em>P2</em>. This region becames the negative by subtrating in each analized pixel (<em>image.at&lt;uchar&gt;(i,j) = 255 - image.at&lt;uchar&gt;(i, j);</em>).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_results">2.1.3. Results</h4>
+<h4 id="_results">3.1.4. Results</h4>
 <div id="fig_biel" class="imageblock">
 <div class="content">
 <img src="biel.png" alt="Original Image">
 </div>
-<div class="title">Figura 1. Original Image</div>
+<div class="title">Figure 1. Original Image</div>
 </div>
 <div id="fig_negative" class="imageblock">
 <div class="content">
 <img src="negative.png" alt="Output Image">
 </div>
-<div class="title">Figura 2. Negative Region</div>
+<div class="title">Figure 2. Negative Region</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exchange_regions">2.2. Exchange Regions</h3>
+<h3 id="_exchange_regions">3.2. Exchange Regions</h3>
 <div class="sect3">
-<h4 id="_objective_2">2.2.1. Objective</h4>
+<h4 id="_objective_2">3.2.1. Objective</h4>
 <div class="paragraph">
 <p>This program will take an image, and swap the first
 quadrant with the third
@@ -594,9 +607,9 @@ quadrant.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_code_2">2.2.2. Code</h4>
+<h4 id="_code_2">3.2.2. Code</h4>
 <div id="exa_trocaregioes" class="listingblock">
-<div class="title">Listagem 2. trocaregioes.cpp</div>
+<div class="title">Code 2. trocaregioes.cpp</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="cpp">#include &lt;iostream&gt;
 #include &lt;opencv2/opencv.hpp&gt;
@@ -651,36 +664,39 @@ int main(int, char**){
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_description_2">3.2.3. Description</h4>
 <div class="paragraph">
 <p>The code (<a href="trocaregioes.cpp" class="bare">trocaregioes.cpp</a>) read an image and find the center point by dividing the number of rows and colums by two. The point is used to separete the four quadrants.
 The image is copied and used as an auxiliary, so the swap can be done.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_results_2">2.2.3. Results</h4>
+<h4 id="_results_2">3.2.4. Results</h4>
 <div id="fig_troca" class="imageblock">
 <div class="content">
 <img src="biel.png" alt="Original Image">
 </div>
-<div class="title">Figura 3. Original Image</div>
+<div class="title">Figure 3. Original Image</div>
 </div>
 <div id="fig_negative" class="imageblock">
 <div class="content">
 <img src="troca.png" alt="Output Image">
 </div>
-<div class="title">Figura 4. Exchanged Quadrants</div>
+<div class="title">Figure 4. Exchanged Quadrants</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_objects_counter">2.3. Objects Counter</h3>
+<h3 id="_objects_counter">3.3. Objects Counter</h3>
 <div class="sect3">
-<h4 id="_objective_3">2.3.1. Objective</h4>
+<h4 id="_objective_3">3.3.1. Objective</h4>
 <div class="paragraph">
 <p>This program will count the number os objects contained in an image, remove those that touch the borders and count the numbers of holls in the objects.</p>
 </div>
 <div id="exa_labeling" class="listingblock">
-<div class="title">Listagem 3. labeling.cpp</div>
+<div class="title">Code 3. labeling.cpp</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="cpp">#include &lt;iostream&gt;
 #include &lt;opencv2/opencv.hpp&gt;
@@ -781,6 +797,9 @@ int main(int argc, char** argv){
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_description_3">3.3.2. Description</h4>
 <div class="paragraph">
 <p>The code (<a href="labeling.cpp" class="bare">labeling.cpp</a>) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
 So each time the pixel is finded, add to a conter (<em>nobjects</em>) a new object.
@@ -790,33 +809,33 @@ After the borders objects are removed and the program count the numbers of holls
 </div>
 </div>
 <div class="sect3">
-<h4 id="_results_3">2.3.2. Results</h4>
+<h4 id="_results_3">3.3.3. Results</h4>
 <div id="fig_bolhas" class="imageblock">
 <div class="content">
 <img src="bolhas.png" alt="Original Image">
 </div>
-<div class="title">Figura 5. Original Image</div>
+<div class="title">Figure 5. Original Image</div>
 </div>
 <div id="fig_labeling" class="imageblock">
 <div class="content">
-<img src="labeling.png" alt="Output Image">
+<img src="labeling.png" alt="Output Image" height="] | image::labeling.png[Output Image">
 </div>
-<div class="title">Figura 6. Filled Image</div>
+<div class="title">Figure 6. Filled Image</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_equalizer">2.4. Equalizer</h3>
+<h3 id="_equalizer">3.4. Equalizer</h3>
 <div class="sect3">
-<h4 id="_objective_4">2.4.1. Objective</h4>
+<h4 id="_objective_4">3.4.1. Objective</h4>
 <div class="paragraph">
-<p>This program will count the number os objects contained in an image, remove those that touch the borders and count the numbers of holls in the objects.</p>
+<p>This program will read and image and equilize the histogram to redistributing each pixel color. This will highlight the colors, so the details will be more explicity.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_code_3">2.4.2. Code</h4>
-<div id="exa_labeling" class="listingblock">
-<div class="title">Listagem 4. labeling.cpp</div>
+<h4 id="_code_3">3.4.2. Code</h4>
+<div id="exa_equalize" class="listingblock">
+<div class="title">Code 4. equalize.cpp</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="cpp">#include &lt;iostream&gt;
 #include &lt;opencv2/opencv.hpp&gt;
@@ -825,100 +844,111 @@ using namespace cv;
 using namespace std;
 
 int main(int argc, char** argv){
-  Mat image;
+
+  Mat image, histR, histG, histB;
   int width, height;
-  int nobjects, nholls;
+  VideoCapture cap;
+  vector&lt;Mat&gt; planes;
+  int nbins = 128;
+  float range[] = {0, 256};
+  const float *histrange = { range };
+  bool uniform = true;
+  bool acummulate = false;
 
-  CvPoint p;
+//Set the first camera inicialized
+  cap.open(0);
 
-  //Read a image determined previously in gray scale
-  image = imread(argv[1],CV_LOAD_IMAGE_GRAYSCALE);
-
-  if(!image.data){
-    std::cout &lt;&lt; "Imagem nao carregou corretamente!\n";
-    return(-1);
+  if(!cap.isOpened()){
+    cout &lt;&lt; "Camera(s) indisponivel(is)";
+    return -1;
   }
 
-  //Num of rows and colums
-  width=image.size().width;
-  height=image.size().height;
+//Determine the size of images
+  width  = cap.get(CV_CAP_PROP_FRAME_WIDTH);
+  height = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
 
-  p.x=0;
-  p.y=0;
+  cout &lt;&lt; "Largura = " &lt;&lt; width &lt;&lt; endl;
+  cout &lt;&lt; "Altura  = " &lt;&lt; height &lt;&lt; endl;
 
-  //Count objects and fill with gray
-  nobjects=0;
-  for(int i=0; i&lt;height; i++){
-    for(int j=0; j&lt;width; j++){
-      if(image.at&lt;uchar&gt;(i,j) == 255){
-        nobjects++;
-        p.x=j;
-        p.y=i;
-        floodFill(image,p,100);
-      }
+//Determine the size of variables histogram showed
+  int histw = nbins, histh = nbins/3;
+  Mat histImgR(histh, histw, CV_8UC3, Scalar(0,0,0));
+  Mat histImgG(histh, histw, CV_8UC3, Scalar(0,0,0));
+  Mat histImgB(histh, histw, CV_8UC3, Scalar(0,0,0));
+
+//Infinite loop to capture the images
+  while(1){
+    //Storege the images
+    cap &gt;&gt; image;
+
+    //Split the planes in R, G and B
+    split (image, planes);
+
+    //Equalize the images by plane
+    equalizeHist(planes[0],planes[0]);
+    equalizeHist(planes[1],planes[1]);
+    equalizeHist(planes[2],planes[2]);
+
+    //Merge the planes
+    merge(planes,image);
+
+    //Calculate the histograms by color
+    calcHist(&amp;planes[0], 1, 0, Mat(), histR, 1,
+             &amp;nbins, &amp;histrange,
+             uniform, acummulate);
+    calcHist(&amp;planes[1], 1, 0, Mat(), histG, 1,
+             &amp;nbins, &amp;histrange,
+             uniform, acummulate);
+    calcHist(&amp;planes[2], 1, 0, Mat(), histB, 1,
+             &amp;nbins, &amp;histrange,
+             uniform, acummulate);
+
+    //Normalize the histograms starting in 0 to number of rows
+    normalize(histR, histR, 0, histImgR.rows, NORM_MINMAX, -1, Mat());
+    normalize(histG, histG, 0, histImgG.rows, NORM_MINMAX, -1, Mat());
+    normalize(histB, histB, 0, histImgB.rows, NORM_MINMAX, -1, Mat());
+
+    //Create the histogram images
+    histImgR.setTo(Scalar(0));
+    histImgG.setTo(Scalar(0));
+    histImgB.setTo(Scalar(0));
+
+    for(int i=0; i&lt;nbins; i++){
+      line(histImgR,
+           Point(i, histh),
+           Point(i, histh-cvRound(histR.at&lt;float&gt;(i))),
+           Scalar(0, 0, 255), 1, 8, 0);
+      line(histImgG,
+           Point(i, histh),
+           Point(i, histh-cvRound(histG.at&lt;float&gt;(i))),
+           Scalar(0, 255, 0), 1, 8, 0);
+      line(histImgB,
+           Point(i, histh),
+           Point(i, histh-cvRound(histB.at&lt;float&gt;(i))),
+           Scalar(255, 0, 0), 1, 8, 0);
     }
+
+    //Copy the histogram images to the original image on the top left
+    histImgR.copyTo(image(Rect(0, 0       ,nbins, histh)));
+    histImgG.copyTo(image(Rect(0, histh   ,nbins, histh)));
+    histImgB.copyTo(image(Rect(0, 2*histh ,nbins, histh)));
+
+    //Show image
+    imshow("image", image);
+
+    //Holds the image until press key
+    if(waitKey(30) &gt;= 0) break;
   }
 
-  //Remove objecs from the borders
-  for(int i=0; i&lt;width; i++){
-    if(image.at&lt;uchar&gt;(0,i) == 0){
-      p.x=i;
-      p.y=0;
-      floodFill(image,p,100);
-    }
-  }
-
-  for(int i=0; i&lt;height; i++){
-    if(image.at&lt;uchar&gt;(i,0) == 0){
-      p.x=0;
-      p.y=i;
-      floodFill(image,p,100);
-    }
-  }
-
-  for(int i=0; i&lt;height; i++){
-    if(image.at&lt;uchar&gt;(width-1,i) == 0){
-      p.x=i;
-      p.y=width-1;
-      floodFill(image,p,100);
-    }
-  }
-
-  for(int i=0; i&lt;width; i++){
-    if(image.at&lt;uchar&gt;(i,height-1) == 0){
-      p.x=height-1;
-      p.y=i;
-      floodFill(image,p,100);
-    }
-  }
-
-  //Count the num of holls
-  nholls=0;
-  for(int i=0; i&lt;height; i++){
-    for(int j=0; j&lt;width; j++){
-      if(image.at&lt;uchar&gt;(i,j) == 0){
-    // achou um objeto
-        nholls++;
-        p.x=j;
-        p.y=i;
-        floodFill(image,p,255);
-      }
-    }
-  }
-
-  cout &lt;&lt; "Numero de objetos: " &lt;&lt; nobjects &lt;&lt; endl;
-  cout &lt;&lt; "Numero de buracos: " &lt;&lt; nholls &lt;&lt; endl;
-
-  //Show image
-  imshow("image", image);
-  imwrite("labeling.png", image);
-  waitKey();
   return 0;
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_description_4">3.4.3. Description</h4>
 <div class="paragraph">
-<p>The code (<a href="labeling.cpp" class="bare">labeling.cpp</a>) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
+<p>The code (<a href="equalize.cpp" class="bare">equalize.cpp</a>) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
 So each time the pixel is finded, add to a conter (<em>nobjects</em>) a new object.
 To avoid misscounting, the function <em>cv::floodFill();</em> is apllied on that object.
 This function change the color of the pixels that has the same value and are next of the analized pixel for a determinated color (100).
@@ -926,18 +956,18 @@ After the borders objects are removed and the program count the numbers of holls
 </div>
 </div>
 <div class="sect3">
-<h4 id="_results_4">2.4.3. Results</h4>
+<h4 id="_results_4">3.4.4. Results</h4>
 <div id="fig_bolhas" class="imageblock">
 <div class="content">
 <img src="bolhas.png" alt="Original Image">
 </div>
-<div class="title">Figura 7. Original Image</div>
+<div class="title">Figure 7. Original Image</div>
 </div>
 <div id="fig_labeling" class="imageblock">
 <div class="content">
 <img src="labeling.png" alt="Output Image">
 </div>
-<div class="title">Figura 8. Filled Image</div>
+<div class="title">Figure 8. Filled Image</div>
 </div>
 <div class="paragraph">
 <p>nao da certo
@@ -950,7 +980,7 @@ s</p>
 <div class="content">
 <img src="figs/negative.png" alt="Saida do programa hello">
 </div>
-<div class="title">Figura 9. Saída do programa hello</div>
+<div class="title">Figure 9. Saída do programa hello</div>
 </div>
 <div class="paragraph">
 <p>Aqui vem a listagem do programa <a href="exemplos/hello.cpp" class="bare">exemplos/hello.cpp</a> , mostrada
@@ -958,7 +988,7 @@ Listagem <a href="#exa_hello">Hello</a>, cuja única funcionalidade apresentar n
 uma imagem fornecida via linha de comando.</p>
 </div>
 <div id="exa_hello" class="listingblock">
-<div class="title">Listagem 5. hello.cpp</div>
+<div class="title">Code 5. hello.cpp</div>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="cpp">#include &lt;iostream&gt;
 #include &lt;opencv2/opencv.hpp&gt;
@@ -979,7 +1009,7 @@ int main(int argc, char** argv){
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bibliografia">3. Bibliografia</h2>
+<h2 id="_bibliografia">4. Bibliografia</h2>
 <div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
@@ -996,7 +1026,7 @@ int main(int argc, char** argv){
 </div>
 <div id="footer">
 <div id="footer-text">
-Última atualização 2017-09-20 12:15:52 BRT
+Last Update 2017-09-20 14:15:16 BRT
 </div>
 </div>
 <script type="text/x-mathjax-config">

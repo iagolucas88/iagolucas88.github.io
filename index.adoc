@@ -17,7 +17,7 @@
 :figure-caption: Figure
 :listing-caption: Code
 :table-caption: Comparation
-:toc-title: Content
+:toc-title: Index
 :preface-title: Preface
 :version-label: Version
 :last-update-label: Last Update
@@ -26,16 +26,22 @@
 = DCA0445: Processamento Digital de Imagens =
 
 == Preface ==
+This tutorial shows and explain some image digital processing concepsts, using the artificial vision library OpenCV (C++).
+All the following codes were produced and tested using Ubuntu (Unix Distribution). However, they should work well in others Operational Systems. 
 
-== Introduction ==
+This page was build to report all the results of assignments on the Image Digital Processing course of Universidade Federal do Rio Grande do Norte (Brazil), on Mecatronis Engeneering graduation. 
+The followings exercises are commented and described for amateur programmers.
+All the files for these excersises are available on github (https://github.com/iagolucas88/iagolucas88.git).
 
-This page refers to a tutorial of some OpenCV functions and its effects on images.
+Sugestions, criticism and/or contributions are quite welcome. So, if you are interest in send something to me, my main contact is iagolucas88@gmail.com.
 
-Link github (link:https://github.com/iagolucas88/iagolucas88.git)
 
-== First Unit ==
+== Initial Concepts ==
+
+
+
+== First Unit - Space Domain ==
 Firsts steps on OpenCV library. On this unit, we will describe some examples of OpenCV functions on space domain.
-
 
 
 
@@ -198,7 +204,7 @@ image::motiondetector.gif[Motion Detector, title="Motion detection"]
 
 
 
-=== Spacial Filter ===
+=== Spacial Filter 1 ===
 ==== Objective ====
 This program pass a filter in an image that will blur or detect borders from different directions. 
 
@@ -217,6 +223,30 @@ The code (link:laplgauss.cpp[]) reads an image and choosing the filter using a m
 //[.text-center]
 .Filtering
 image::laplgauss.gif[Original Image, title="Spacial Filter"]
+
+
+
+
+
+=== Tilt Shift ===
+==== Objective ====
+This program pass a filter in an image that will blur or detect borders from different directions. 
+
+[[exa_tiltshift, Tilt Shift]]
+[source,cpp]
+.tiltshift.cpp
+----
+include::tiltshift.cpp[]
+----
+
+==== Description ====
+The code (link:tiltshift.cpp[]) reads an image and choosing the filter using a menu, the image is filtered by the aplied mask and the result is shown on the screen.
+
+==== Results ====
+[[fig_tiltshift, Tilt Shift]]
+//[.text-center]
+.Tilt Shift
+image::tiltshift.gif[Original Image, title="Tilt Shift"]
 
 
 

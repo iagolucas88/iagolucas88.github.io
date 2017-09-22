@@ -17,10 +17,11 @@ int top_slider = 0;
 int top_slider_max = 100;
 
 //Matrixs
-Mat image1, image2, blended;
+Mat image, image1, blended;
 Mat imageTop;
 
 VideoCapture cap;
+VideoWriter tsv;
 
 //Neme of the trackers bar
 char TrackbarName[50];
@@ -82,16 +83,112 @@ int main(int argvc, char** argv){
                      1,1,1,1,1,
                      1,1,1,1,1};
 
-  cap.open("MyVideo.mp4");
+  tsv.open("tiltshiftvideo", CV_FOURCC('M','J','P','G'), 15, Size(640,480));
+ 
+  if(!cap.isOpened()){
+    cout << "Error to open the video!\n";
+    return -1;
+  }
+
+  cap("MyVideo.mp4");
 
   if(!cap.isOpened()){
     cout << "Camera(s) Indisponivel(is)!\n";
     return -1;
   }
 
+  cap >> image;
+  resize(img,img,Size(640,480));
+
+  image1 = image.clone(); // imagem borrada
+  blended = Mat::zeros(image.size(), CV_8UC3); // imagem resultante
+
+  	//Name of the image window
+    namedWindow("Tilt Shift", 1);
+
+    //Name of the alpha slider
+    sprintf( TrackbarName, "Alpha ");
+
+    //Creates the alfa slider tracker
+    createTrackbar(TrackbarName, "Tilt Shift",
+				    &alfa_slider,
+				    alfa_slider_max,
+				    on_trackbar_blend);
+    on_trackbar_blend(alfa_slider, 0 );
+
+    //Name of the heigth slider
+    sprintf( TrackbarName, "Height ");
+
+    //Creates the top slider tracker
+    createTrackbar(TrackbarName, "Tilt Shift",
+			 	  &top_slider,
+		  		  top_slider_max,
+		  		  on_trackbar_change );
+    on_trackbar_change(top_slider, 0 );
+
+    //Name of the position slider
+    sprintf( TrackbarName, "Position ");
+
+   //Creates the center slider tracker
+   createTrackbar(TrackbarName, "Tilt Shift  ",
+            &center_slider,
+            center_slider_max,
+            on_trackbar_change );
+    on_trackbar_change(center_slider, 0 );
+
   while(true){
 
-    //Sa
+  	if(image.empty())
+            break;
+
+    image1 = image.clone(); // imagem borrada
+
+    for(int i=0; i<10; i++)
+            GaussianBlur(image1, image1, Size(9,9),0,0);
+
+        for(int i=0; i<image.size().height; i++)
+            addWeighted(image.row(i),alphaPeso(i,l1,l2,d_slider),iamge1.row(i),1-alphaPeso(i,l1,l2,d_slider),0,blended.row(i));
+        imshow("imr",result);
+        if(waitKey(30) == 27) break;
+    }
+
+    while(true){
+    	for(int i=0; i<4; i++)
+            cap >> image;
+        cap >> image;
+
+        resize(imgage,image, Size(640,480));
+        // converte para hsv
+        cvtColor(image, imageTop, CV_BGR2HSV);
+        vector<Mat> planes;
+        split(imageTop, planes);
+        // aumenta a saturacao da imagem
+        planes[1]*=2;
+        // junta novamente a imgame
+        merge(planes, imageTop);
+        cvtColor(imageTop,image,CV_HSV2BGR);
+        if(image.empty())
+            break;
+        iamge1 = image.clone();
+        // Borra a imagem
+        for(int i=0; i<10; i++)
+            GaussianBlur(image1, image1, Size(9,9),0,0);
+
+        // efeito tilt-shift
+        for(int i=0; i<image.size().height; i++)
+            addWeighted(image.row(i),alphaPeso(i,l1,l2,d_slider),image1.row(i),1-alphaPeso(i,l1,l2,d_slider),0,imageTop.row(i));
+        tsv << imageTop; // guarda o frame resultante
+        imshow("imr",imageTop);
+        if(waitKey(30) != -1) break;
+    }
+    tsv.release();
+    imwrite("resultado.jpg",imageTop);
+
+    return 0;
+
+ }
+
+    /*Sa
     cap >> image1;
 
     cvtColor(image1, image1, CV_BGR2GRAY);
@@ -125,42 +222,11 @@ int main(int argvc, char** argv){
     //Copy image 
     image1.copyTo(imageTop);
 
-    //Name of the image window
-    namedWindow("Tilt Shift", 1);
-
-    //Name of the alpha slider
-    sprintf( TrackbarName, "Alpha ");
-
-    //Creates the alfa slider tracker
-    createTrackbar(TrackbarName, "Tilt Shift",
-				    &alfa_slider,
-				    alfa_slider_max,
-				    on_trackbar_blend);
-    on_trackbar_blend(alfa_slider, 0 );
-
-    //Name of the heigth slider
-    sprintf( TrackbarName, "Height ");
-
-    //Creates the top slider tracker
-    createTrackbar(TrackbarName, "Tilt Shift",
-			 	  &top_slider,
-		  		  top_slider_max,
-		  		  on_trackbar_change );
-    on_trackbar_change(top_slider, 0 );
-
-    //Name of the position slider
-    sprintf( TrackbarName, "Position ");
-
-   //Creates the center slider tracker
-   createTrackbar(TrackbarName, "Tilt Shift  ",
-            &center_slider,
-            center_slider_max,
-            on_trackbar_change );
-    on_trackbar_change(center_slider, 0 );
+    
 
     //Press any key to close
     waitKey(0);
 
-  }
+  
   return 0;
-}
+}*/

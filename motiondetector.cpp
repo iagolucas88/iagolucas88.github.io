@@ -70,7 +70,8 @@ int main(int argc, char** argv){
 
     //Alert signal if detect moviment
     if(compare >= limiar){
-      cout << "Moviment Detected! ("<<compare<<")"<<endl;
+      putText(image, "Moviment Detected!", cvPoint(width*0.3,height*0.9), FONT_HERSHEY_COMPLEX_SMALL, 1, cvScalar(0,0,250), 1, CV_AA);
+      cout << "("<<compare<<")"<<endl;
     }
 
     //Set the last image to compare

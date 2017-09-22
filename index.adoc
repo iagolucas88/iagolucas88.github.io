@@ -97,7 +97,7 @@ image::troca.png[Output Image, title="Exchanged Quadrants"]
 ==== Objective ====
 This program will count the number os objects contained in an image, remove those that touch the borders and count the numbers of holls in the objects.
 
-[[exa_labeling, Objects Counter]]
+[[exa_labeling, Labeling]]
 [source,cpp]
 .labeling.cpp
 ----
@@ -120,7 +120,9 @@ image::bolhas.png[Original Image, title="Original Image"]
 [[fig_labeling, Labeling]]
 //[.text-center]
 .Output Image
-image::labeling.png[Output Image, title="Filled Image"] | image::labeling.png[Output Image, title="Filled Image"]
+|====
+|image:labeling.png[Output Image, title="Filled Image"] | image:labeling.png[Output Image, title="Filled Image"]
+|====
 
 === Equalizer ===
 ==== Objective ====
@@ -142,15 +144,15 @@ This function change the color of the pixels that has the same value and are nex
 After the borders objects are removed and the program count the numbers of holls present on the image.
 
 ==== Results ====
-[[fig_bolhas, Troca]]
+[[fig_histogram, Histogram]]
 //[.text-center]
 .Original Image
-image::bolhas.png[Original Image, title="Original Image"]
+image::histogram.png[Original Image, title="Histogram Image"]
 
-[[fig_labeling, Labeling]]
+[[fig_equalize, Equalize]]
 //[.text-center]
 .Output Image
-image::labeling.png[Output Image, title="Filled Image"]
+image::equalize.png[Output Image, title="Equalized Image"]
 
 nao da certo
 s

@@ -16,7 +16,7 @@
 :example-caption: Exemple
 :figure-caption: Figure
 :listing-caption: Code
-:table-caption: Tabela
+:table-caption: Comparation
 :toc-title: Content
 :preface-title: Preface
 :version-label: Version
@@ -36,11 +36,14 @@ Link github (link:https://github.com/iagolucas88/iagolucas88.git)
 == First Unit ==
 Firsts steps on OpenCV library. On this unit, we will describe some examples of OpenCV functions on space domain.
 
+
+
+
+
 === Negative ===
 ==== Objective ====
 This program will take an image, and the user will determine a region passing coordenates. This region will be the negative of the original image.
 
-==== Code ====
 [[exa_regions, Regions]]
 [source,cpp]
 .regions.cpp
@@ -49,18 +52,22 @@ include::regions.cpp[]
 ----
 
 ==== Description ====
-The code (link:regions.cpp[]) read an image, so a user determine coordenates for _P1_ and _P2_. This region becames the negative by subtrating in each analized pixel (_image.at<uchar>(i,j) = 255 - image.at<uchar>(i, j);_).
+The code (link:regions.cpp[]) reads an image, so a user determine coordenates for _P1_ and _P2_. This region becames the negative by subtrating in each analized pixel (_image.at<uchar>(i,j) = 255 - image.at<uchar>(i, j);_).
 
-==== Results ====
+==== Result ====
 [[fig_biel, Biel]]
 //[.text-center]
 .Original Image
-image::biel.png[Original Image, title="Original Image"]
-
-[[fig_negative, Negative]]
+image::biel.png[Original Image, title="Original Image"] 
+[[fig_biel, Biel]]
 //[.text-center]
-.New Image
+.Negative Image Region
 image::negative.png[Output Image, title="Negative Region"]
+
+
+
+
+
 
 === Exchange Regions ===
 ==== Objective ====
@@ -70,7 +77,7 @@ quadrant, as well the second
 quadrant with the forth 
 quadrant.
 
-==== Code ====
+
 [[exa_trocaregioes, Exchange Regions]]
 [source,cpp]
 .trocaregioes.cpp
@@ -79,19 +86,21 @@ include::trocaregioes.cpp[]
 ----
 
 ==== Description ====
-The code (link:trocaregioes.cpp[]) read an image and find the center point by dividing the number of rows and colums by two. The point is used to separete the four quadrants. 
+The code (link:trocaregioes.cpp[]) reads an image and find the center point by dividing the number of rows and colums by two. The point is used to separete the four quadrants. 
 The image is copied and used as an auxiliary, so the swap can be done. 
 
-==== Results ====
-[[fig_troca, Troca]]
+==== Result ====
+[[fig_biel, Troca]]
 //[.text-center]
 .Original Image
-image::biel.png[Original Image, title="Original Image"]
-
-[[fig_negative, Negative]]
+image::biel.png[Output Image, title="Original Image"]
+[[fig_biel, Troca]]
 //[.text-center]
-.Output Image
-image::troca.png[Output Image, title="Exchanged Quadrants"]
+.Exchanged Image 
+image::troca.png[Output Image, title="Exchanged Image"]
+
+
+
 
 === Objects Counter ===
 ==== Objective ====
@@ -105,30 +114,33 @@ include::labeling.cpp[]
 ----
 
 ==== Description ====
-The code (link:labeling.cpp[]) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
+The code (link:labeling.cpp[]) reads an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
 So each time the pixel is finded, add to a conter (_nobjects_) a new object. 
 To avoid misscounting, the function _cv::floodFill();_ is apllied on that object.
 This function change the color of the pixels that has the same value and are next of the analized pixel for a determinated color (100).
 After the borders objects are removed and the program count the numbers of holls present on the image.
 
-==== Results ====
+==== Result ====
 [[fig_bolhas, Troca]]
 //[.text-center]
 .Original Image
-image::bolhas.png[Original Image, title="Original Image"]
-
-[[fig_labeling, Labeling]]
+image::bolhas.png[Output Image, title="Filled Image"] 
+[[fig_bolhas, Troca]]
 //[.text-center]
-.Output Image
-|====
-|image:labeling.png[Output Image, title="Filled Image"] | image:labeling.png[Output Image, title="Filled Image"]
-|====
+.Contered Image
+image::labeling.png[Output Image, title="Filled Image"]
+
+
+
+
+
+
 
 === Equalizer ===
 ==== Objective ====
-This program will read and image and equilize the histogram to redistributing each pixel color. This will highlight the colors, so the details will be more explicity.
+This program will reads and image and equilize the histogram to redistributing each pixel color. This will highlight the colors, so the details will be more explicity.
 
-==== Code ====
+
 [[exa_equalize, Equilizer]]
 [source,cpp]
 .equalize.cpp
@@ -137,44 +149,80 @@ include::equalize.cpp[]
 ----
 
 ==== Description ====
-The code (link:equalize.cpp[]) read an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
+The code (link:equalize.cpp[]) reads an image and analize the value of each pixel. When it finds a determinated color (255), aplly the .
 So each time the pixel is finded, add to a conter (_nobjects_) a new object. 
 To avoid misscounting, the function _cv::floodFill();_ is apllied on that object.
 This function change the color of the pixels that has the same value and are next of the analized pixel for a determinated color (100).
 After the borders objects are removed and the program count the numbers of holls present on the image.
 
-==== Results ====
+==== Result ====
 [[fig_histogram, Histogram]]
 //[.text-center]
-.Original Image
-image::histogram.png[Original Image, title="Histogram Image"]
+.Image's Histogram
+image::histogram.gif[Original Image, title="Image's Histogram"] 
 
-[[fig_equalize, Equalize]]
+[[fig_histogram, Histogram]]
 //[.text-center]
-.Output Image
-image::equalize.png[Output Image, title="Equalized Image"]
-
-nao da certo
-s
+.Equalized Image's Histogram
+image::equalize.gif[Output Image, title="Equalized Image's Histogram"]
 
 
-A saída do programa _hello_ é mostrado na Figura <<fig_hello>>
 
-[[fig_hello, Hello]]
-//[.text-center]
-.Saída do programa hello
-image::figs/negative.png[Saida do programa hello, title="Saída do programa hello"]
 
-Aqui vem a listagem do programa link:exemplos/hello.cpp[] , mostrada
-Listagem <<exa_hello>>, cuja única funcionalidade apresentar na tela
-uma imagem fornecida via linha de comando.
-    
-[[exa_hello, Hello]]
+
+
+
+
+=== Motion Detector ===
+==== Objective ====
+This program is abel to monitore an ambient and detect a change of the captured image from the image before. 
+
+[[exa_motiondetector, Motion Detector]]
 [source,cpp]
-.hello.cpp
+.motiondetector.cpp
 ----
-include::hello.cpp[]
+include::equalize.cpp[]
 ----
+
+==== Description ====
+The code (link:motiondetector.cpp[]) reads an image and calculate the histogram of the green plan. Using this as a model for the next captured image, by the difference between them, it is possible do detect a change on the image.
+
+==== Results ====
+[[fig_motiondetecor, Motion Detector]]
+//[.text-center]
+.Motion detection
+image::motiondetector.gif[Motion Detector, title="Motion detection"]
+
+
+
+
+
+
+=== Spacial Filter ===
+==== Objective ====
+This program pass a filter in an image that will blur or detect borders from different directions. 
+
+[[exa_laplgauss, Laplacian & Gauss]]
+[source,cpp]
+.laplgauss.cpp
+----
+include::laplgauss.cpp[]
+----
+
+==== Description ====
+The code (link:laplgauss.cpp[]) reads an image and choosing the filter using a menu, the image is filtered by the aplied mask and the result is shown on the screen.
+
+==== Results ====
+[[fig_laplgauss, Filter]]
+//[.text-center]
+.Filtering
+image::laplgauss.gif[Original Image, title="Spacial Filter"]
+
+
+
+
+
+
 
 
 

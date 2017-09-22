@@ -81,7 +81,7 @@ int main(int argvc, char** argv){
                      1,1,1,1,1};
 
   //Read the image and save on image1
-  image1 = imread("biel.png");
+  image1 = imread("veneza.png");
 
   //Clone the read image
   image2 = image1.clone();

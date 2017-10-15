@@ -19,11 +19,10 @@ int top_slider_max = 100;
 //Matrixs
 Mat image, image1, blended;
 Mat imageTop;
-
 VideoCapture cap;
 VideoWriter tsv;
 
-//Neme of the trackers bar
+//Name of the trackers bar
 char TrackbarName[50];
 
 //Track bar combination
@@ -32,7 +31,6 @@ void on_trackbar_blend(int, void*){
  addWeighted(image1, alfa, imageTop, 1-alfa, 0.0, blended);
  imshow("Tilt Shift", blended);
 }
-
 
 void on_trackbar_change(int, void*) {
 
@@ -157,7 +155,7 @@ int main(int argvc, char** argv){
             cap >> image;
         cap >> image;
 
-        resize(imgage,image, Size(640,480));
+        resize(image,image, Size(640,480));
         // converte para hsv
         cvtColor(image, imageTop, CV_BGR2HSV);
         vector<Mat> planes;

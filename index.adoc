@@ -249,6 +249,42 @@ The code (link:tiltshift.cpp[]) reads an image and choosing the filter using a m
 image::tiltshift.gif[Original Image, title="Tilt Shift"]
 
 
+== Second Unit - Frequency Domain ==
+(description here)
+
+
+
+
+=== Homomorphic ===
+==== Objective ====
+(description here)
+
+[[exa_homomorfico, Homomorphic]]
+[source,cpp]
+.homomorfico.cpp
+----
+include::homomorfico.cpp[]
+----
+
+==== Description ====
+(description here)
+
+
+==== Result ====
+[[fig_filtro, Filter]]
+//[.text-center]
+.Filter  	
+image::filter.png[Filter , title="Filter"] 
+
+[[fig_homomorfico, Homomorphic Original]]
+//[.text-center]
+.Original Image
+image::original_homomorphic.jpg[Original Image, title="Original Image"]
+
+[[fig_homomorfico, Homomorphic]]
+//[.text-center]
+.Homomophic Image 
+image::homomorphic.png[Homomophic Image , title="Homomophic Image"]
 
 
 

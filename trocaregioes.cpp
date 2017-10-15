@@ -41,7 +41,7 @@ int main(int, char**){
     }
 
   //Save new image
-  imwrite("/home/iago/Documents/Processamento Digital de Imagens/1/troca.png", image);
+  imwrite("/home/iago/Documents/Processamento Digital de Imagens/1_unidade/iagolucas88/iagolucas88.github.io/troca.png", image);
 
   //Show image
   imshow("Biel Troca", image);

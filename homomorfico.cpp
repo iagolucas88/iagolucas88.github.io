@@ -61,6 +61,9 @@ Mat homomorphicFilter(double gl, double gh, double c, double d0){
   //Shows filter image
   imshow("Filter", tmp);  
 
+  //Save new image
+  //imwrite("/home/iago/Documents/Processamento Digital de Imagens/1_unidade/iagolucas88/iagolucas88.github.io/filter.png", tmp);
+
   //Merge the images
   merge(comps, 2, filter);  
 

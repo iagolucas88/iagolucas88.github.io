@@ -279,7 +279,7 @@ image::filter.png[Filter , title="Filter"]
 [[fig_homomorfico, Homomorphic Original]]
 //[.text-center]
 .Original Image
-image::original_homomorphic.jpg[Original Image, title="Original Image"]
+image::original_homomorphic.jpg1[Original Image, title="Original Image"]
 
 [[fig_homomorfico, Homomorphic]]
 //[.text-center]
@@ -288,6 +288,38 @@ image::homomorphic.png[Homomophic Image , title="Homomophic Image"]
 
 
 
+
+
+
+=== Canny and Pointillism ===
+==== Objective ====
+(description here)
+
+[[exa_cannypoints, Canny and Pointillism]]
+[source,cpp]
+.cannypoints.cpp
+----
+include::cannypoints.cpp[]
+----
+
+==== Description ====
+(description here)
+
+[[fig_dog, Original]]
+//[.text-center]
+.Original Image
+image::dog.png[Original Image, title="Original Image"]
+
+==== Result ====
+[[fig_pontilista, Pointllism]]
+//[.text-center]
+.Pointllism 	
+image::pointilista.png[Pointllism , title="Pointllism"] 
+
+[[fig_cannypoints, Homomorphic]]
+//[.text-center]
+.Canny and Pointllism Image 
+image::cannypoints.png[Canny and Pointllism Image , title="Canny and Pointllism Image"]
 
 
 

@@ -271,52 +271,28 @@ procedure is to transform from the space signal through a frequency signal using
 the Fourier Transform. Due to the composition of the signal as expressed 
 below, some mathematical manipulation is needed.
 ["asciimath",align="right"]
-[stem]
-++++
-^{(I)}im(x,y) = i(x,y)*r(x,y) 
-++++
 
-[stem]
-++++
-^{(II)}ln[im(x,y)] = ln[i(x,y)*r(x,y)] 
-++++
+stem:[^{(I)}im(x,y) = i(x,y).r(x,y)]
 
-[stem]
-++++
-^{(III)}ln[im(x,y)]=ln[i(x, y)] + ln[r(x, y)] 
-++++
+stem:[^{(II)}ln(im(x,y)) = ln(i(x,y).r(x,y))]
 
-[stem]
-++++
-^{(IV)}imlin(x,y)=ilin(x,y)+rlin(x,y)
-++++
-	
+stem:[^{(III)}ln(im(x,y)) = ln(i(x, y)) + ln(r(x, y))]
+ 
+stem:[^{(IV)}im_{lin}(x,y) = i_{lin}(x,y)+r_{lin}(x,y)]
+
 Applying the Fourier Transform we end-up with the following results:
 
-[stem]
-++++
-^{(V)}F\{im_{lin}(x,y)\}=F\{i_{lin}(x,y)+r_{lin}(x,y)\}
-++++
+stem:[^{(V)}F\{im_{lin}(x,y)\}=F\{i_{lin}(x,y)+r_{lin}(x,y)\}]
 
-[stem]
-++++
-^{(VI)}IM_{lin}(u,v)=I_{lin}(u,v)+R_{lin}(u,v)
-++++
-
+stem:[^{(VI)}IM_{lin}(u,v)=I_{lin}(u,v)+R_{lin}(u,v)]
 
 Allowing us to apply the convolution theorem in this domain and easily manipulate 
 the frequency components and acquire therefore a treated image by using the reverse
 Fourier Transform in the processed signal, as seen below:
-[stem]
-++++
-^{(VII)}U(u,v)=G(u,v).IMlin(u,v)
-++++
 
-stem: []
+stem:[^{(VII)}U(u,v)=G(u,v).IM_{lin}(u,v)]
 
-
-Referring to U(u,v) as the treated signal, and G(u,v) as a filter designed to 
-attenuate unwanted frequency components in the image spectrum.
+Referring to stem:[U(u,v)] as the treated signal, and stem:[G(u,v)] as a filter designed to attenuate unwanted frequency components in the image spectrum.
 
 
 [[exa_homomorfico, Homomorphic]]
@@ -327,7 +303,8 @@ include::homomorfico.cpp[]
 ----
 
 ==== Description ====
-(description here)
+The image is divided in four quadrants as we did it previously (link:trocaregioes.cpp[]). This will shift the Discrete Fourier Transform, so it can merge with the filter and calibrate the brightness.
+The parameters for the filtering are calibrated by track bars. 
 
 
 ==== Result ====
@@ -353,7 +330,11 @@ image::homomorphic.png[Homomophic Image , title="Homomophic Image"]
 
 === Canny and Pointillism ===
 ==== Objective ====
-(description here)
+Using the pointillism technique, we are abel to repaint an image with littles circles. However, as we use a ramdomic function to plot the similars colors to substitute the circle area, the produced efect is not that precise.
+So, by using the Canny tecnique (determine the bordes in all directions), we can repaint the circles based on the canny borders.
+
+Using these techiniques, we can merge them and produces a great filter for the image.  
+
 
 [[exa_cannypoints, Canny and Pointillism]]
 [source,cpp]
@@ -363,7 +344,7 @@ include::cannypoints.cpp[]
 ----
 
 ==== Description ====
-(description here)
+Changing the track bar's value, we can determine the canny efect on the pointllism fiter. The OpenCV function (Canny()) needs two parameters (T1 and T2) to ajust the precision. 
 
 [[fig_dog, Original]]
 //[.text-center]

@@ -1717,55 +1717,37 @@ procedure is to transform from the space signal through a frequency signal using
 the Fourier Transform. Due to the composition of the signal as expressed
 below, some mathematical manipulation is needed.</p>
 </div>
-<div class="stemblock">
-<div class="content">
-\$^{(I)}im(x,y) = i(x,y)*r(x,y)\$
+<div class="paragraph">
+<p>\$^{(I)}im(x,y) = i(x,y).r(x,y)\$</p>
 </div>
+<div class="paragraph">
+<p>\$^{(II)}ln(im(x,y)) = ln(i(x,y).r(x,y))\$</p>
 </div>
-<div class="stemblock">
-<div class="content">
-\$^{(II)}ln[im(x,y)] = ln[i(x,y)*r(x,y)]\$
+<div class="paragraph">
+<p>\$^{(III)}ln(im(x,y)) = ln(i(x, y)) + ln(r(x, y))\$</p>
 </div>
-</div>
-<div class="stemblock">
-<div class="content">
-\$^{(III)}ln[im(x,y)]=ln[i(x, y)] + ln[r(x, y)]\$
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\$^{(IV)}imlin(x,y)=ilin(x,y)+rlin(x,y)\$
-</div>
+<div class="paragraph">
+<p>\$^{(IV)}im_{lin}(x,y) = i_{lin}(x,y)+r_{lin}(x,y)\$</p>
 </div>
 <div class="paragraph">
 <p>Applying the Fourier Transform we end-up with the following results:</p>
 </div>
-<div class="stemblock">
-<div class="content">
-\$^{(V)}F\{im_{lin}(x,y)\}=F\{i_{lin}(x,y)+r_{lin}(x,y)\}\$
+<div class="paragraph">
+<p>\$^{(V)}F\{im_{lin}(x,y)\}=F\{i_{lin}(x,y)+r_{lin}(x,y)\}\$</p>
 </div>
-</div>
-<div class="stemblock">
-<div class="content">
-\$^{(VI)}IM_{lin}(u,v)=I_{lin}(u,v)+R_{lin}(u,v)\$
-</div>
+<div class="paragraph">
+<p>\$^{(VI)}IM_{lin}(u,v)=I_{lin}(u,v)+R_{lin}(u,v)\$</p>
 </div>
 <div class="paragraph">
 <p>Allowing us to apply the convolution theorem in this domain and easily manipulate
 the frequency components and acquire therefore a treated image by using the reverse
 Fourier Transform in the processed signal, as seen below:</p>
 </div>
-<div class="stemblock">
-<div class="content">
-\$^{(VII)}U(u,v)=G(u,v).IMlin(u,v)\$
-</div>
+<div class="paragraph">
+<p>\$^{(VII)}U(u,v)=G(u,v).IM_{lin}(u,v)\$</p>
 </div>
 <div class="paragraph">
-<p>stem: []</p>
-</div>
-<div class="paragraph">
-<p>Referring to U(u,v) as the treated signal, and G(u,v) as a filter designed to
-attenuate unwanted frequency components in the image spectrum.</p>
+<p>Referring to \$U(u,v)\$ as the treated signal, and \$G(u,v)\$ as a filter designed to attenuate unwanted frequency components in the image spectrum.</p>
 </div>
 <div id="exa_homomorfico" class="listingblock">
 <div class="title">Code 8. homomorfico.cpp</div>
@@ -1944,7 +1926,8 @@ attenuate unwanted frequency components in the image spectrum.</p>
 <div class="sect3">
 <h4 id="_description_8">4.1.2. Description</h4>
 <div class="paragraph">
-<p>(description here)</p>
+<p>The image is divided in four quadrants as we did it previously (<a href="trocaregioes.cpp" class="bare">trocaregioes.cpp</a>). This will shift the Discrete Fourier Transform, so it can merge with the filter and calibrate the brightness.
+The parameters for the filtering are calibrated by track bars.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1974,7 +1957,11 @@ attenuate unwanted frequency components in the image spectrum.</p>
 <div class="sect3">
 <h4 id="_objective_9">4.2.1. Objective</h4>
 <div class="paragraph">
-<p>(description here)</p>
+<p>Using the pointillism technique, we are abel to repaint an image with littles circles. However, as we use a ramdomic function to plot the similars colors to substitute the circle area, the produced efect is not that precise.
+So, by using the Canny tecnique (determine the bordes in all directions), we can repaint the circles based on the canny borders.</p>
+</div>
+<div class="paragraph">
+<p>Using these techiniques, we can merge them and produces a great filter for the image.</p>
 </div>
 <div id="exa_cannypoints" class="listingblock">
 <div class="title">Code 9. cannypoints.cpp</div>
@@ -2094,7 +2081,7 @@ attenuate unwanted frequency components in the image spectrum.</p>
 <div class="sect3">
 <h4 id="_description_9">4.2.2. Description</h4>
 <div class="paragraph">
-<p>(description here)</p>
+<p>Changing the track bar&#8217;s value, we can determine the canny efect on the pointllism fiter. The OpenCV function (Canny()) needs two parameters (T1 and T2) to ajust the precision.</p>
 </div>
 <div id="fig_dog" class="imageblock">
 <div class="content">
@@ -2139,7 +2126,7 @@ attenuate unwanted frequency components in the image spectrum.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last Update 2017-10-20 21:39:02 BRT
+Last Update 2017-10-22 21:23:10 BRT
 </div>
 </div>
 <script type="text/x-mathjax-config">
